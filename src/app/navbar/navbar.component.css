@@ -1,0 +1,26 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.navbar {
+    background: #ededed;
+}
+.logo{
+    padding: 15px;
+}
+
+ul {
+    float: right;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    display: inline-block;
+    padding: 0px 12px;
+    margin-right: 20px ;
+}

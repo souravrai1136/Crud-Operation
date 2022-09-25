@@ -1,0 +1,15 @@
+{
+  "dealers": [
+    {
+      "dealerName": "hjvgh",
+      "totalBudget": null,
+      "numberOfCar": "676",
+      "remaningBudget": null,
+      "ower": {
+        "fristName": null,
+        "lastName": null
+      },
+      "id": "160d3b8e-7f6a-bd21-53a8-e4538303343c"
+    }
+  ]
+}

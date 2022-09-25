@@ -1,0 +1,89 @@
+<div class="container">
+  <div class="heading">
+    <h2>Dealrships</h2>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <input class="form-control" placeholder="Search">
+    </div>
+    <div class="col-6">
+      <button class="btn btn-primary" (click)="openModal()">Add Dealer</button>
+    </div>
+  </div>
+  <div class="white-box">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col" *ngFor="let item of thItems;">{{item.text}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of tableData">
+          <td>{{item.dealerName}}</td>
+          <td>{{item.numberOfCar}}</td>
+          <td>{{item.totalBudget}}</td>
+          <td>{{item.remaningBudget}}</td>
+          <td>
+            <button class="btn btn-success" (click)="openModal()" (click)="onEditDealer(item)">Edit</button>&nbsp;
+            <button class="btn btn-danger" (click)="deleteDealer(item)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<!-- Add Dealer Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" *ngIf="showAdd" id="exampleModalLabel">Add Dealer Details</h5>
+        <h5 class="modal-title" *ngIf="showUpdate" id="exampleModalLabel">Edit Dealer Details</h5>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="DealersForm">
+          <div class="row">
+            <div class="col-6">
+              <label>Dealer Name</label>
+              <input class="form-control" formControlName="dealerName" placeholder="Dealer Name">
+            </div>
+            <div class="col-6">
+              <label>Number Of Cars</label>
+              <input class="form-control" formControlName="numberOfCar" placeholder="Total Budget">
+            </div>
+          </div><br>
+          <div class="row">
+            <div class="col-6">
+              <label>Total Budget</label>
+              <input class="form-control" formControlName="totalBudget" placeholder="Total Budget">
+            </div>
+            <div class="col-6">
+              <label>Ramining Budget</label>
+              <input class="form-control" formControlName="remaningBudget" placeholder="Total Budget">
+            </div>
+          </div><br>
+          <div formGroupName="ower">
+            <div class="row">
+              <div class="col-6">
+                <label>Ower Frist Name</label>
+                <input class="form-control" formControlName="fristName" placeholder="FristName">
+              </div>
+              <div class="col-6">
+                <label>Ower Last Name</label>
+                <input class="form-control" formControlName="lastName" placeholder="LastName">
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button id="clear" class="btn btn-secondary" (click)="CloseModal()">Close</button>
+        <button *ngIf="showAdd" class="btn btn-primary" (click)="addDealer()">Add </button>
+        <button *ngIf="showUpdate" class="btn btn-primary" (click)="updateDealer()">Update Changes</button>
+      </div>
+    </div>
+  </div>
+</div>
